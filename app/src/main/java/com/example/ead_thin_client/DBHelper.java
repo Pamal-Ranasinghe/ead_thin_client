@@ -5,6 +5,8 @@ import android.content.Context;
         import android.database.sqlite.SQLiteDatabase;
         import android.database.sqlite.SQLiteOpenHelper;
 
+import androidx.annotation.Nullable;
+
 public class DBHelper extends SQLiteOpenHelper {
     private static int VERSION = 1;
     private static final String DBNAME = "ead.db";
@@ -13,6 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
 //---COMMON COLUMN NAMES---//
     private static final String ID = "id";
+    private static final String PASSWORD = "password";
 
 //---FUEL STATION TABLE COLUMNS---//
     private static final String STATION_ID = "stationid";
@@ -20,7 +23,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String STATION_LOCATION = "location";
     private static final String DIESEL_AMOUNT = "dieselamount";
     private static final String PATROL_AMOUNT = "patrolamount";
-    private static final String PASSWORD = "password";
+
 
 //---CONSUMER TABLE COLUMNS---//
     private static final String VEHICLE_NUMBER = "vehiclenumber";
@@ -28,7 +31,7 @@ public class DBHelper extends SQLiteOpenHelper {
     private static final String FUEL_TYPE = "fueltype";
 
 
-    public DBHelper(Context context) {
+    public DBHelper(@Nullable  Context context) {
         super(context, DBNAME, null, VERSION);
     }
 
@@ -50,7 +53,8 @@ public class DBHelper extends SQLiteOpenHelper {
                 ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 VEHICLE_NUMBER + " TEXT," +
                 VEHICLE_TYPE + " TEXT," +
-                FUEL_TYPE + " TEXT"
+                FUEL_TYPE + " TEXT," +
+                PASSWORD + " TEXT"
                 + ");";
 
 
@@ -87,13 +91,14 @@ public class DBHelper extends SQLiteOpenHelper {
 
     }
 
-    public void addConsumer(FuelStation fuelStation){
+    public void addConsumer(Consumer consumer){
         SQLiteDatabase sqLiteDatabase = getWritableDatabase();
         ContentValues contentValues = new ContentValues();
 
-        contentValues.put(VEHICLE_NUMBER, fuelStation.getStationId());
-        contentValues.put(VEHICLE_TYPE, fuelStation.getStationName());
-        contentValues.put(FUEL_TYPE, fuelStation.getStationLocation());
+        contentValues.put(VEHICLE_NUMBER, consumer.getVehicleNumber());
+        contentValues.put(VEHICLE_TYPE, consumer.getVehicleType());
+        contentValues.put(FUEL_TYPE, consumer.getFuelType());
+        contentValues.put(PASSWORD, consumer.getPassword());
 
         sqLiteDatabase.insert(CONSUMER_TABLE_NAME, null, contentValues);
         sqLiteDatabase.close();

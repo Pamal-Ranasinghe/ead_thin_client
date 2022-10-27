@@ -21,7 +21,7 @@
 
 
             <EditText
-                android:id="@+id/editTextTextPersonName2"
+                android:id="@+id/editTextConsumerSignUpVehicleNumber"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginStart="32dp"
@@ -29,79 +29,75 @@
                 android:layout_marginEnd="32dp"
                 android:background="@drawable/grey_edt_background"
                 android:ems="10"
-                android:hint="Your Name"
-                android:inputType="textPersonName"
-                android:padding="16dp"
-                android:textColorHint="#636363"
-                android:textSize="18sp" />
-
-
-
-            <EditText
-                android:id="@+id/editTextPhoneNumber"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="32dp"
-                android:background="@drawable/grey_edt_background"
-                android:ems="10"
-                android:hint="Phone Number"
-                android:inputType="textPersonName"
-                android:padding="16dp"
-                android:textColorHint="#636363"
-                android:textSize="18sp" />
-
-            <EditText
-                android:id="@+id/editTextVehicleNumber"
-                android:layout_width="match_parent"
-                android:layout_height="55dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="24dp"
-                android:layout_marginEnd="32dp"
-
-                android:background="@drawable/grey_edt_background"
-                android:ems="10"
                 android:hint="Vehicle Number"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:padding="16dp"
                 android:textColorHint="#636363"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editTextVehicleType"
+                android:id="@+id/editTextConsumerSignUpVehicleType"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
-
                 android:background="@drawable/grey_edt_background"
                 android:ems="10"
                 android:hint="Vehicle Type"
-                android:inputType="textPassword"
+                android:inputType="text"
                 android:padding="16dp"
                 android:textColorHint="#636363"
                 android:textSize="18sp" />
 
             <EditText
-                android:id="@+id/editTextTextPassword2"
+                android:id="@+id/editTextConsumerSignUpFuelType"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="24dp"
                 android:layout_marginEnd="32dp"
-
                 android:background="@drawable/grey_edt_background"
                 android:ems="10"
-                android:hint="enter your password"
+                android:hint="Fuel Type"
+                android:inputType="text"
+                android:padding="16dp"
+                android:textColorHint="#636363"
+                android:textSize="18sp" />
+
+            <EditText
+                android:id="@+id/editTextConsumerSignUpPassword"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="32dp"
+                android:background="@drawable/grey_edt_background"
+                android:ems="10"
+                android:hint="Password"
                 android:inputType="textPassword"
                 android:padding="16dp"
                 android:textColorHint="#636363"
                 android:textSize="18sp" />
 
+<!--            <EditText-->
+<!--                android:id="@+id/editTextTextPassword2"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="55dp"-->
+<!--                android:layout_marginStart="32dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:layout_marginEnd="32dp"-->
+
+<!--                android:background="@drawable/grey_edt_background"-->
+<!--                android:ems="10"-->
+<!--                android:hint="enter your password"-->
+<!--                android:inputType="textPassword"-->
+<!--                android:padding="16dp"-->
+<!--                android:textColorHint="#636363"-->
+<!--                android:textSize="18sp" />-->
+
             <Button
-                android:id="@+id/signUpBtn"
+                android:id="@+id/buttonConsumerSignUp"
                 style="@android:style/Widget.Button"
                 android:layout_width="match_parent"
                 android:layout_height="55dp"

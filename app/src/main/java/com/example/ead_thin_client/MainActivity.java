@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -36,23 +38,22 @@ public class MainActivity extends AppCompatActivity {
         RetrofitBuilder retroObj = RetrofitBuilder.getInstance();
         eadApi = retroObj.configure();
 
-        Call<List> call = eadApi.getTest();
+        Call<JsonObject> call = eadApi.getTest();
 
 
-        call.enqueue(new Callback<List>() {
+        call.enqueue(new Callback<JsonObject>() {
             @Override
-            public void onResponse(Call<List> call, Response<List> response) {
+            public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                 if(!response.isSuccessful()){
                     Toast.makeText(MainActivity.this, response.code(), Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                textViewResult.setText((String.valueOf(response.body())));
-                Toast.makeText(MainActivity.this, "I hit", Toast.LENGTH_SHORT).show();
+//                textViewResult.setText(response.body().get("messsage").toString());
             }
 
             @Override
-            public void onFailure(Call<List> call, Throwable t) {
+            public void onFailure(Call<JsonObject> call, Throwable t) {
                 Toast.makeText(MainActivity.this, "I Unable", Toast.LENGTH_SHORT).show();
             }
         });
@@ -77,7 +78,9 @@ public class MainActivity extends AppCompatActivity {
         existAccount.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent intent = new Intent(getApplicationContext(), )
+                Intent intent = new Intent(getApplicationContext(), ConsumerLogin.class);
+                startActivity(intent);
+
             }
         });
 

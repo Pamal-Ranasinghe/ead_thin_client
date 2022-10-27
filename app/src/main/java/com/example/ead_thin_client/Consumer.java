@@ -5,12 +5,21 @@ public class Consumer {
     private String vehicleNumber;
     private String vehicleType;
     private String fuelType;
+    private String password;
 
-    public Consumer(int id, String vehicleNumber, String vehicleType, String fuelType) {
+    public Consumer(int id, String vehicleNumber, String vehicleType, String fuelType, String password) {
         this.id = id;
         this.vehicleNumber = vehicleNumber;
         this.vehicleType = vehicleType;
         this.fuelType = fuelType;
+        this.password = password;
+    }
+
+    public Consumer(String vehicleNumber, String vehicleType, String fuelType, String password) {
+        this.vehicleNumber = vehicleNumber;
+        this.vehicleType = vehicleType;
+        this.fuelType = fuelType;
+        this.password = password;
     }
 
     public Consumer(String vehicleNumber, String vehicleType, String fuelType) {
@@ -33,5 +42,13 @@ public class Consumer {
 
     public String getFuelType() {
         return fuelType;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

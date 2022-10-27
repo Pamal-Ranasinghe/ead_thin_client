@@ -1,5 +1,7 @@
 package com.example.ead_thin_client;
 
+import com.google.gson.JsonObject;
+
 import java.util.List;
 
 import retrofit2.Call;
@@ -17,10 +19,10 @@ public interface EadApi {
 
     //Fuel Station Endpoints
     @GET("test")
-    Call<List> getTest();
+    Call<JsonObject> getTest();
 
     @POST("fuelStation/addFuelStation")
-    Call <FuelStation> createFuelStation(@Body FuelStation fuelStation);
+    Call <FuelStation> d(@Body FuelStation fuelStation);
 
     @GET("fuelStation/addFuelStation")
     Call <List<FuelStation>> getFuelStation();
@@ -33,8 +35,15 @@ public interface EadApi {
 
 
     //Consumer Endpoints
+//    @POST("vehicle/addVehicle")
+//    Call <List> createVehicle(
+//            @Field("vehicleNumber") String vehicleNumber,
+//            @Field("vehicleType") String vehicleType,
+//            @Field("fuelType") String fuelType
+//    );
+
     @POST("vehicle/addVehicle")
-    Call <Consumer> createVehicle(@Body Consumer consumer);
+    Call <List> createVehicle(@Body Consumer consumer);
 
     @GET("vehicle/getVehicles")
     Call<List<Consumer>> getVehicles();
