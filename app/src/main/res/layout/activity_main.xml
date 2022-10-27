@@ -2,59 +2,73 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/testView"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF8EA"
     tools:context=".MainActivity">
 
     <Button
         android:id="@+id/ConsumerSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
-        android:layout_marginBottom="46dp"
+        android:layout_marginStart="3dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="30dp"
+        android:width="100dp"
+        android:height="100dp"
+        android:background="@drawable/round_corners"
+        android:padding="10dp"
         android:text="Consumer"
-        app:layout_constraintBottom_toTopOf="@+id/toLoginSignUp"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/FuelStationSignUp"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/headerSignUp" />
 
     <Button
         android:id="@+id/toLoginSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="46dp"
-        android:layout_marginEnd="45dp"
+        android:layout_width="225dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="44dp"
+        android:background="@drawable/round_corners"
+        android:padding="10dp"
         android:text="already have an account ? "
-        app:layout_constraintEnd_toEndOf="@+id/FuelStationSignUp"
+        app:layout_constraintStart_toStartOf="@+id/ConsumerSignUp"
         app:layout_constraintTop_toBottomOf="@+id/FuelStationSignUp" />
 
     <Button
         android:id="@+id/FuelStationSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="236dp"
+        android:width="100dp"
+        android:height="100dp"
+        android:background="@drawable/round_corners"
+        android:padding="10dp"
         android:text="Fuel Station"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ConsumerSignUp"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/headerSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:layout_marginTop="49dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginBottom="44dp"
         android:text="Let's Sign Up"
-        app:layout_constraintEnd_toEndOf="@+id/toLoginSignUp"
-        app:layout_constraintStart_toStartOf="@+id/ConsumerSignUp"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/FuelStationSignUp"
+        app:layout_constraintStart_toStartOf="@+id/ConsumerSignUp" />
 
-    <ImageView
-        android:id="@+id/imageSignUp"
+    <TextView
+        android:id="@+id/testText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="78dp"
-        app:layout_constraintStart_toStartOf="@+id/headerSignUp"
-        app:layout_constraintTop_toBottomOf="@+id/headerSignUp"
-        app:srcCompat="@drawable/ic_launcher_foreground"
-        tools:ignore="VectorDrawableCompat" />
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toTopOf="@+id/headerSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

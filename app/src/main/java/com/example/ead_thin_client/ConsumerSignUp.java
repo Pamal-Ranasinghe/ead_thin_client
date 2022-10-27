@@ -9,6 +9,6 @@ public class ConsumerSignUp extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_consumer_login);
+        setContentView(R.layout.activity_consumer_sign_up);
     }
 }
